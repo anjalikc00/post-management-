@@ -1,12 +1,32 @@
-const {check}=require('express-validator')
 
- registerValidator=[
+const{check}=require("express-validator");
+exports.registerValidator=[
     check('name',"Name is required").not().isEmpty(),
-    check('email',"Please include a valid email").isEmail().normalizeEmail({
+    check("email",'Please include a valid email').not().isEmail().normalizeEmail({
         gmail_remove_dots:true
     }),
     check('password',"Password is required").not().isEmpty()
+
+
 ]
-module.exports={
-    registerValidator
-}
+
+
+
+
+
+
+
+
+
+// const {check}=require('express-validator')
+
+//  registerValidator=[
+//     check('name',"Name is required").not().isEmpty(),
+//     check('email',"Please include a valid email").isEmail().normalizeEmail({
+//         gmail_remove_dots:true
+//     }),
+//     check('password',"Password is required").not().isEmpty()
+// ]
+// module.exports={
+//     registerValidator
+// }
